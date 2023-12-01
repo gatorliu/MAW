@@ -1,0 +1,75 @@
+.markdown-body{
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+}
+
+/* CODE BLOCK -------------------------------- */
+/* replace github-marked theme */
+.markdown-body pre {
+    background-color: rgb(13, 17, 23) ; /* highlight.js/.../github-dark.min.css*/
+}
+
+/* replace highlight.js/.../github-dark.min.css: lighter */
+.hljs-comment {
+    color:aquamarine;
+}
+/* CODE BLOCK -------------------------------- */
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+/*  slide hr */
+.markdown-body > hr {
+    height:1px;
+    background-color: brown;
+}
+@media print {
+    .markdown-body > hr {page-break-after: always;}
+}
+
+/* 收合 code block */
+details > summary { 
+    border-radius: 5px;
+    border: 1px solid #282c34;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+details > summary.code { 
+    list-style-type: "Code (expand)";
+    color:aliceblue;
+    background-color: #282c34;
+    width: 130px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+details > p { 
+    display: none;
+}
+details[open] > p { 
+    display: block ;
+}
+details[open] > summary { 
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid #282c34;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-width: 0px;
+}
+details[open] > summary.code {
+    list-style-type: "Code (collapse)"; 
+    color:#282c34;
+    background-color: white;
+    border: 1px solid #282c34;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 0;
+}

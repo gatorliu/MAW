@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
+    <!--script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script -->
+    <!--script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script -->
+    <!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" / -->
+
+    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.min.js"></script> <!-- version: @4.0.5 -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" 
+          integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="module" src="main.js"></script>
+
+</head>
+<body>	
+	<div id="toc" style="float: right;"></div>
+	<div id="content" class="markdown-body"></div>
+    <div class="reveal" style="width:90%; height: 90%; visibility:hidden" ><div class="slides">
+        <section data-markdown id="data-markdown"
+                data-transition="fade"
+                data-separator="^<!-- *> *-->.*$"
+                data-separator-vertical="^<!-- *[vV] *--\>.*$"
+         >
+        <textarea data-template id="revealjs-body">
+            ## Slide 1
+            A paragraph with some text and a [link](https://hakim.se).
+            ---
+            ## Slide 2
+            ---
+            ## Slide 3
+        </textarea>
+        </section>
+    </div></div>
+   
+  <div class="footer">@James</div>
+  <script>
+    if (location.protocol == 'file:') {
+            alert('Chrome Browser does not support.\n\nPlease start a web servivr (python -m http.server')
+    }
+  </script>
+</body>
+</html>
