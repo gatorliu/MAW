@@ -44,7 +44,7 @@ function getMDPath() {
 const getMD_Local = function(mdpath, history_push=true) {
     fetch(mdpath)
     .then(response => response.text()).catch(function(){
-            alert('Chrome Browser does not support.\n\nPlease start a web servivr (python -m http.server')
+            alert('Get File Error')
         })
     .then(text => callback(text))
 }
@@ -132,10 +132,35 @@ function init() {
     console.log(mdpath)
 
 	if (mdpath=='') {
-		mdpath= init_mdpath
+        return;
+		//mdpath= init_mdpath
 	}
 	baseUrl = mdpath.replace(/[^/]*.md$/, '')
 	console.log(baseUrl)
     let getMD = (location.protocol == 'file:') ? getMD_Local : getMD_Web
 	getMD(mdpath)
+}
+
+export function md_text() {
+    
+    callback(document.getElementById('md_text').value)
+}
+export function md_url() {
+    let url = document.getElementById('md_url').value
+    console.log(url)
+    getMD_Web(url)
+}
+export function md_localfile() {
+    let file = document.querySelector("#md_local").files[0];
+		let reader = new FileReader();
+		reader.addEventListener('load', function(e) {
+	    		let text = e.target.result;
+	    		callback(text);
+		});
+		reader.readAsText(file);
+    /*
+    let f = document.getElementById('md_local').value
+    console.log(f)
+    getMD_Local(f)
+    */
 }

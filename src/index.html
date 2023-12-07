@@ -15,34 +15,60 @@
           integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" 
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <script type="module" src="main.js"></script>
+    <!-- script type="module" src="main.js"></script -->
+    <script type="module">
+        import {md_text, md_url, md_localfile} from './main.js';
+        
+        document.querySelector('#md_text_summit').addEventListener('click', md_text)
+        document.querySelector('#md_url_summit').addEventListener('click', md_url)
+        document.querySelector('#md_local').addEventListener('change', md_localfile)
+        
+    </script>
 
 </head>
 <body>	
-	<div id="toc" style="float: right;"></div>
-	<div id="content" class="markdown-body"></div>
-    <div class="reveal" style="width:90%; height: 90%; visibility:hidden" ><div class="slides">
-        <section data-markdown id="data-markdown"
-                data-transition="fade"
-                data-separator="^<!-- *> *-->.*$"
-                data-separator-vertical="^<!-- *[vV] *--\>.*$"
-         >
-        <textarea data-template id="revealjs-body">
-            ## Slide 1
-            A paragraph with some text and a [link](https://hakim.se).
-            ---
-            ## Slide 2
-            ---
-            ## Slide 3
-        </textarea>
-        </section>
-    </div></div>
+    
+    <div>
+        <div></div>
+        <label for="md_text">Markdown Format Text:</label>
+        <textarea id="md_text" name="md_text" rows="10" cols="80"></textarea><button  id="md_text_summit">submit</button>
+        </div>
+        <div>
+            <label for="md_url">MD URL</label><input type="text" id="md_url" name="md_url"><button  id="md_url_summit">submit</button>
+        </div>
+        
+        <div>
+            <label for="md_local">Select a file:</label><input type="file" id="md_local" name="md_local">
+        </div>
+        
+    </div>
+
+    <div>
+        <div id="toc" style="float: right;"></div>
+        <div id="content" class="markdown-body"></div>
+        <div class="reveal" style="width:90%; height: 90%; visibility:hidden" ><div class="slides">
+            <section data-markdown id="data-markdown"
+                    data-transition="fade"
+                    data-separator="^<!-- *> *-->.*$"
+                    data-separator-vertical="^<!-- *[vV] *--\>.*$"
+            >
+            <textarea data-template id="revealjs-body">
+                ## Slide 1
+                A paragraph with some text and a [link](https://hakim.se).
+                ---
+                ## Slide 2
+                ---
+                ## Slide 3
+            </textarea>
+            </section>
+        </div></div>
+    </div>
    
-  <div class="footer">@James</div>
-  <script>
-    if (location.protocol == 'file:') {
-            alert('Chrome Browser does not support.\n\nPlease start a web servivr (python -m http.server')
-    }
-  </script>
+    <div class="footer">@James</div>
+    <script>
+        if (location.protocol == 'file:') {
+                alert('Chrome Browser does not support.\n\nPlease start a web servivr (python -m http.server')
+        }
+      </script>
 </body>
 </html>
